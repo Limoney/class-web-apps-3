@@ -150,9 +150,9 @@ function prepareTiles()
 function shuffleTiles()
 {
     let positions = [];
-    for(let tile of tiles)
+    for(let point of grid.snapPoints)
     {
-        positions.push(tile.position.copy());
+        positions.push(point.copy().sub(grid.tileSizeX*0.5, grid.tileSizeY*0.5));
     }
     positions = shuffle(positions);
     for(let tile of tiles)
