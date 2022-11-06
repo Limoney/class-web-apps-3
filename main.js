@@ -68,7 +68,10 @@ function setup()
         prepareTiles();
     });
     document.getElementById("tile-cnt").addEventListener("change",(event)=>{
-        tileSplitCount = parseInt(event.target.value);
+        let inputValue = parseInt(event.target.value);
+        if(inputValue <2)
+            event.target.value = 2;
+        tileSplitCount =  event.target.value;
     });
     document.getElementById("save-tiles-btn").addEventListener("click",()=>{
         saveCanvas();
