@@ -1,0 +1,138 @@
+:root
+{
+    --primary: #1abc9c;
+    --primary-dark: #16a085;
+    --secondary: #34495e;
+    --secondary-dark: #2c3e50;
+    --error: #e74c3c;
+    --font: #ecf0f1;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    color: var(--font);
+    background-color: var(--secondary-dark);
+    font-family: 'Anek Malayalam', sans-serif;
+    font-size: 0.92em;
+}
+.page-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.page-nav
+{
+    width: 300px;
+    background-color: var(--secondary);
+    min-height: 100vh;
+}
+.nav-element
+{
+    color: var(--font);
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.05em;
+    transition: 0.3s cubic-bezier(.77,0,.18,1) all;
+    user-select: none;
+}
+.nav-element:hover
+{
+    background-color: var(--primary-dark);
+    cursor:pointer;
+    padding: 15px;
+}
+.map-wrapper
+{
+    flex-grow: 1;
+    min-height: 600px;
+    width: 50%;
+}
+.canvas-wrapper
+{
+    flex-grow: 1;
+    width: 50%;
+}
+.button
+{
+    padding: 5px;
+    background-color: var(--primary-dark);
+    border-radius: 5px;
+    min-width: 100px;
+    text-align: center;
+    user-select: none;
+}
+.button:hover
+{
+    cursor: pointer;
+    background-color: var(--primary);
+}
+.is-active
+{
+    border-bottom: 2px solid var(--primary-dark);
+}
+.is-hidden
+{
+    opacity: 0;
+    max-height:0 !important;
+    overflow: hidden;
+}
+.is-excluded
+{
+    display: none;
+}
+input
+{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 5px solid var(--primary-dark);
+    box-sizing: border-box;
+    padding: 5px;
+    color: var(--font);
+}
+input:focus
+{
+    outline: none;
+    border-bottom-color: var(--primary);
+}
+
+.dropdown-items
+{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.3s all ease-in-out;
+    margin: 0;
+    padding: 0;
+}
+.dropdown-items .nav-element
+{
+    margin-left: 20px;
+}
+.dropdown-items .nav-element:hover
+{
+   background-color: inherit;
+   padding: 10px;
+}
+.dropdown-trigger:checked
+{
+    background-color: var(--primary-dark);
+}
+.dropdown-trigger:checked + .dropdown-items
+{
+    max-height: 5000px;
+    opacity: initial;
+    overflow: visible;
+}
+.disabled
+{
+    background-color: var(--secondary-dark);
+}
+.disabled:hover
+{
+    background-color: var(--secondary-dark);
+}
